@@ -1,0 +1,22 @@
+﻿h2, p {
+    margin: 50px;
+}
+
+body {
+    background-image: url("/CSS/Frutas Y Verduras De Nuestro Campo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    
+}
+.container{
+    background-color: lightgray;
+   
+    
+}
+h2 {
+    font-family: Lucida Handwriting;
+}
+img {
+    url("/CSS/cultivo.jpg");
+}

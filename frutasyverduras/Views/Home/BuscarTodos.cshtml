@@ -1,0 +1,79 @@
+﻿@model IEnumerable<frutasyverduras.Models.usuario>
+
+@{
+    ViewBag.Title = "BuscarTodos";
+    Layout = "~/Views/Shared/_Principal.cshtml";
+}
+<!-- BOOTSTRAP CDN -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<!-- CUSTOM CSS -->
+<link rel="stylesheet" href="styles.css">
+<h2>Lista de Visitas</h2>
+
+<p>
+    @Html.ActionLink("Agregar", "Create")
+</p>
+<div class="container">
+    <table class="table">
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.celular)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.ciudad)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.fecharegistro)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.celular)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ciudad)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecharegistro)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { celular = item.celular }) |
+                    @Html.ActionLink("Detalles", "Details", new { celular = item.celular }) |
+                    @Html.ActionLink("Borrar", "Delete", new { celular = item.celular })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <div>
+        @Html.ActionLink("Regresar", "Index")
+    </div>
+</div>
